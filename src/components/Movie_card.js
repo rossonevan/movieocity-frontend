@@ -9,13 +9,13 @@ function Movie_card ({movie}) {
     const handleClick = () => {
         setIsClicked(isClicked => !isClicked)
     }
-
-    useEffect(() => {
-        fetch(`http://localhost:9292/movies/${movie.id}`)
-        .then(resp => resp.json())
-        .then(data => {console.log(setReviewData(data))})
-    }, [])
-
+    let i = 1
+    const reviewList = movie.reviews.map( review => 
+       <div> 
+            <h2>Review {i++}: {review.user.name} </h2> 
+            <p>{review.comment}</p>
+            <h3>Rating: {review.rating}/5</h3>
+        </div>)
 
     return (
         <div className='movie-card'>
@@ -31,7 +31,8 @@ function Movie_card ({movie}) {
                     ):(
                         <button onClick={handleClick} className='review-button'>Hide Reviews</button>
                     )}
-                </div>
+                    {isClicked ? null : [reviewList]}
+                </div> 
             </card>
         </div>
     ) 

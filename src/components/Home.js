@@ -10,7 +10,7 @@ function Home () {
     const [search, setSearch] = useState('');
 
     useEffect(() => {
-        fetch('http://localhost:9292/movies')
+        fetch('http://localhost:9292/')
         .then(resp => resp.json())
         .then(data => {setMovieData(data)})
     }, [])
