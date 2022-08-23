@@ -14,12 +14,19 @@ function Movie_card ({movie, addReview}) {
         setIsClicked(isClicked => !isClicked)
     }
 
+    const handleRemove = () => {
+        fetch(`http://localhost:9292/reviews/${movie.reviews.id}`, {
+            method: "DELETE",
+        });
+    }
+
     let i = 1
     const reviewList = movie.reviews.map( review => 
        <div> 
             <h2>Review {i++}: {review.user.name} </h2> 
             <p>{review.comment}</p>
             <h3>Rating: {review.rating}/5</h3>
+            <button onClick={handleRemove}>Remove review</button>
         </div>)
 
 
@@ -35,7 +42,7 @@ function Movie_card ({movie, addReview}) {
                     {showReviews ? reviewList : null}
                     {isClicked ? (<button onClick={handleClick} className='create-button'>Cancel Adding Review</button>) : (<button onClick={handleClick} className='create-button'>Add A Review</button>)}
                     <br></br>
-                    {isClicked ? <Form addReview = {addReview} /> : null}
+                    {isClicked ? <Form addReview = {addReview} movie={movie} /> : null}
                 </div> 
             </card>
         </div>
