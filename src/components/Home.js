@@ -21,12 +21,15 @@ function Home () {
     
     const filteredMovies = movieData.filter(movie => movie.title.toLowerCase().includes(search.toLowerCase()))
     
+    const addReview = newReview => {
+        setMovieData(movie => [...movie, newReview])
+    }
 
     return (
     <div className='home'>
         <Header />
             <Search handleSearch = {handleSearch}/>
-            <Movie_list movieData = {filteredMovies}/>
+            <Movie_list movieData = {filteredMovies} addReview = {addReview}/>
     </div>
     )
 }

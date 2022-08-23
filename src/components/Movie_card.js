@@ -1,14 +1,19 @@
-import {React, useState, useEffect} from 'react'
+import {React, useState} from 'react'
+import Form from './Form'
 
 
-function Movie_card ({movie}) {    
-    const [reviewData, setReviewData] = useState([]);
-    const [isClicked, setIsClicked] = useState(true)
+function Movie_card ({movie, addReview}) {    
+    const [isClicked, setIsClicked] = useState(false)
+    const [showReviews, setShowReviews] = useState(false)
 
+    const toggleReviews = () => {
+        setShowReviews(showReviews => !showReviews)
+    }
 
     const handleClick = () => {
         setIsClicked(isClicked => !isClicked)
     }
+
     let i = 1
     const reviewList = movie.reviews.map( review => 
        <div> 
@@ -17,21 +22,19 @@ function Movie_card ({movie}) {
             <h3>Rating: {review.rating}/5</h3>
         </div>)
 
+
     return (
         <div className='movie-card'>
             <card className="card">
-                <h1>{movie.title}</h1>
-                <img src={movie.image} alt={movie.title}/>
-                <h4>{movie.release_date}</h4>
+                <h1>{movie.title} ({movie.release_date})</h1>
+                <img onClick={toggleReviews} src={movie.image} alt={movie.title}/>
                 <h2>Rating: {movie.rating}</h2>
                 <h3>Genre: {movie.genre}</h3>
                 <div className='review-section'>
-                    {isClicked ? (
-                        <button onClick={handleClick} className='review-button'>Show Reviews</button>
-                    ):(
-                        <button onClick={handleClick} className='review-button'>Hide Reviews</button>
-                    )}
-                    {isClicked ? null : [reviewList]}
+                    {showReviews ? reviewList : null}
+                    {isClicked ? (<button onClick={handleClick} className='create-button'>Cancel Adding Review</button>) : (<button onClick={handleClick} className='create-button'>Add A Review</button>)}
+                    <br></br>
+                    {isClicked ? <Form addReview = {addReview} /> : null}
                 </div> 
             </card>
         </div>
