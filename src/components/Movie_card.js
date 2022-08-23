@@ -26,9 +26,10 @@ function Movie_card ({movie, addReview}) {
     return (
         <div className='movie-card'>
             <card className="card">
-                <h1>{movie.title} ({movie.release_date})</h1>
+                <h1>{movie.title}</h1>
+                <h2>({movie.release_date})</h2>
                 <img onClick={toggleReviews} src={movie.image} alt={movie.title}/>
-                <h2>Rating: {movie.rating}</h2>
+                <h2>Rating: </h2>
                 <h3>Genre: {movie.genre}</h3>
                 <div className='review-section'>
                     {showReviews ? reviewList : null}
