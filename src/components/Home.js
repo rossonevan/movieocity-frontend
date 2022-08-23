@@ -18,6 +18,10 @@ function Home () {
     const handleSearch = (string) => {
         setSearch(string)
     }
+
+    const handleDelete = (string) => {
+        setMovieData(string)
+    }
     
     const filteredMovies = movieData.filter(movie => movie.title.toLowerCase().includes(search.toLowerCase()))
     
@@ -29,7 +33,7 @@ function Home () {
     <div className='home'>
         <Header />
             <Search handleSearch = {handleSearch}/>
-            <Movie_list movieData = {filteredMovies} addReview = {addReview}/>
+            <Movie_list movieData = {filteredMovies} handleDelete={handleDelete} addReview = {addReview}/>
     </div>
     )
 }

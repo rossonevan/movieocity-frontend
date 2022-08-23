@@ -2,7 +2,7 @@ import {React, useState} from 'react'
 import Form from './Form'
 
 
-function Movie_card ({movie, addReview}) {    
+function Movie_card ({movie, addReview, handleDelete}) {    
     const [isClicked, setIsClicked] = useState(false)
     const [showReviews, setShowReviews] = useState(false)
 
@@ -14,12 +14,12 @@ function Movie_card ({movie, addReview}) {
         setIsClicked(isClicked => !isClicked)
     }
 
-    // const handleRemove = () => {
-    //     movie.reviews.filter( review => review.id )
-    //     fetch(`http://localhost:9292/reviews/${id}`, {
-    //         method: "DELETE",
-    //     });
-    // }
+    const handleRemove = (id) => {
+        fetch(`http://localhost:9292/reviews/${id}`, {
+            method: "DELETE",
+        });
+        handleDelete()
+    }
 
     let i = 1
     const reviewList = movie.reviews.map( review => 
@@ -27,7 +27,7 @@ function Movie_card ({movie, addReview}) {
             <h2>Review {i++}: {review.user.name} </h2> 
             <p>{review.comment}</p>
             <h3>Rating: {review.rating}/5</h3>
-            <button onClick={() => {fetch(`http://localhost:9292/reviews/${review.id}`, {method: "DELETE",});}}>Remove review</button>
+            <button onClick={() => handleRemove(review.id) }>Remove review</button>
         </div>)
 
 
