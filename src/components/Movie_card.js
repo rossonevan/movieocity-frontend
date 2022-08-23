@@ -1,13 +1,20 @@
-import {React, useState} from 'react'
+import {React, useState, useEffect} from 'react'
 
 
 function Movie_card ({movie}) {    
+    const [reviewData, setReviewData] = useState([]);
     const [isClicked, setIsClicked] = useState(true)
 
 
     const handleClick = () => {
         setIsClicked(isClicked => !isClicked)
     }
+
+    useEffect(() => {
+        fetch(`http://localhost:9292/movies/${movie.id}`)
+        .then(resp => resp.json())
+        .then(data => {console.log(setReviewData(data))})
+    }, [])
 
 
     return (

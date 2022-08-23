@@ -7,7 +7,6 @@ import Search from './Search';
 function Home () {
     const [movieData, setMovieData] = useState([]);
     const [userData, setUserData] = useState([]);
-    const [reviewData, setReviewData] = useState([]);
     const [search, setSearch] = useState('');
 
     useEffect(() => {
