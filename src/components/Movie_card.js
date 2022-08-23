@@ -1,15 +1,30 @@
-import React from 'react'
+import {React, useState} from 'react'
 
 
 function Movie_card ({movie}) {    
+    const [isClicked, setIsClicked] = useState(true)
+
+
+    const handleClick = () => {
+        setIsClicked(isClicked => !isClicked)
+    }
+
+
     return (
         <div className='movie-card'>
             <card className="card">
                 <h1>{movie.title}</h1>
                 <img src={movie.image} alt={movie.title}/>
                 <h4>{movie.release_date}</h4>
-                <h2>{movie.rating}</h2>
-                <h3>{movie.genre}</h3>
+                <h2>Rating: {movie.rating}</h2>
+                <h3>Genre: {movie.genre}</h3>
+                <div className='review-section'>
+                    {isClicked ? (
+                        <button onClick={handleClick} className='review-button'>Show Reviews</button>
+                    ):(
+                        <button onClick={handleClick} className='review-button'>Hide Reviews</button>
+                    )}
+                </div>
             </card>
         </div>
     ) 
