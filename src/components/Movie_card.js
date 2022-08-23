@@ -14,11 +14,12 @@ function Movie_card ({movie, addReview}) {
         setIsClicked(isClicked => !isClicked)
     }
 
-    const handleRemove = () => {
-        fetch(`http://localhost:9292/reviews/${movie.reviews.id}`, {
-            method: "DELETE",
-        });
-    }
+    // const handleRemove = () => {
+    //     movie.reviews.filter( review => review.id )
+    //     fetch(`http://localhost:9292/reviews/${id}`, {
+    //         method: "DELETE",
+    //     });
+    // }
 
     let i = 1
     const reviewList = movie.reviews.map( review => 
@@ -26,7 +27,7 @@ function Movie_card ({movie, addReview}) {
             <h2>Review {i++}: {review.user.name} </h2> 
             <p>{review.comment}</p>
             <h3>Rating: {review.rating}/5</h3>
-            <button onClick={handleRemove}>Remove review</button>
+            <button onClick={() => {fetch(`http://localhost:9292/reviews/${review.id}`, {method: "DELETE",});}}>Remove review</button>
         </div>)
 
 
