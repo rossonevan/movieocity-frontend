@@ -17,13 +17,12 @@ function Movie_card ({movie, addReview, handleDelete}) {
     const handleRemove = (id) => {
         fetch(`http://localhost:9292/reviews/${id}`, {
             method: "DELETE",
-        });
-        handleDelete()
+        })
+        .then(() => handleDelete());
     }
 
     let i = 1
     const reviewList = movie.reviews.map( review => {
-        console.log(review)
         return (
        <div> 
             <h2>Review {i++}: {review.user.name} </h2> 

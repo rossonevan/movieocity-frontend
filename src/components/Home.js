@@ -9,18 +9,21 @@ function Home () {
     const [userData, setUserData] = useState([]);
     const [search, setSearch] = useState('');
 
-    useEffect(() => {
+    useEffect(() => {getMovies()}, [])
+
+    const getMovies = () => {
         fetch('http://localhost:9292/')
         .then(resp => resp.json())
         .then(data => {setMovieData(data)})
-    }, [])
-
+    }
+    
     const handleSearch = (string) => {
         setSearch(string)
     }
 
-    const handleDelete = (string) => {
-        setMovieData(string)
+
+    const handleDelete = () => { 
+        getMovies()
     }
     
     const filteredMovies = movieData.filter(movie => movie.title.toLowerCase().includes(search.toLowerCase()))
@@ -37,7 +40,6 @@ function Home () {
       
           setMovieData(newState);
     }
-    console.log(movieData)
 
     return (
     <div className='home'>
