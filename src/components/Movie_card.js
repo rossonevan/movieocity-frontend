@@ -46,7 +46,7 @@ function Movie_card ({movie, addReview, handleDelete, handlePatch}) {
                 let i = 0
                 i = i + 1
             })
-            return (ratingSum/i).toFixed(2)
+            return (ratingSum/(i - 1)).toFixed(2)
         } 
 
     return (
