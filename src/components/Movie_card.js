@@ -6,16 +6,11 @@ import Form from './Form'
 function Movie_card ({movie, addReview, handleDelete, handlePatch}) {    
     const [isClicked, setIsClicked] = useState(false)
     const [showReviews, setShowReviews] = useState(false)
-    const [editForm, setEditForm] = useState(false)
     const [comment, setComment] = useState("");
     const [rating, setRating] = useState("0");
 
     const toggleReviews = () => {
         setShowReviews(showReviews => !showReviews)
-    }
-
-    const toggleEditForm = () => {
-        setEditForm(editForm => !editForm)
     }
 
     const handleClick = () => {
@@ -29,7 +24,6 @@ function Movie_card ({movie, addReview, handleDelete, handlePatch}) {
         .then(() => handleDelete());
     }
     
-
     let i = 1
     const reviewList = movie.reviews.map( review => {
         return (
@@ -38,8 +32,7 @@ function Movie_card ({movie, addReview, handleDelete, handlePatch}) {
             <p>{review.comment}</p>
             <h3>Rating: {review.rating}/5</h3>
             <div className='edit-form'>
-                {editForm ? <button onClick={toggleEditForm}>Stop Editing Review</button> : <button onClick={toggleEditForm}>Edit Review</button> }
-                {editForm ? <EditForm handlePatch={handlePatch} review={review} /> : null}
+                <EditForm handlePatch={handlePatch} review={review} />
             </div>
             <button onClick={() => handleRemove(review.id) }>Remove Review</button>
         </div>)})
