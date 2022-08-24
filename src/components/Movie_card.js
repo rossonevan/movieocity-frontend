@@ -22,13 +22,16 @@ function Movie_card ({movie, addReview, handleDelete}) {
     }
 
     let i = 1
-    const reviewList = movie.reviews.map( review => 
+    const reviewList = movie.reviews.map( review => {
+        console.log(review)
+        return (
        <div> 
             <h2>Review {i++}: {review.user.name} </h2> 
             <p>{review.comment}</p>
             <h3>Rating: {review.rating}/5</h3>
             <button onClick={() => handleRemove(review.id) }>Remove review</button>
-        </div>)
+        </div>)})
+        
 
 
     return (

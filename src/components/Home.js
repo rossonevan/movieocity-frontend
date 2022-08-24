@@ -25,9 +25,19 @@ function Home () {
     
     const filteredMovies = movieData.filter(movie => movie.title.toLowerCase().includes(search.toLowerCase()))
     
-    const addReview = newReview => {
-        setMovieData(movie => [...movie, newReview])
+    
+    function addReview (newReview) {
+        
+        const newState = movieData.map(obj => {
+            if (obj.id === newReview.movie_id) {
+                obj.reviews.push(newReview)
+            }
+            return obj;
+          });
+      
+          setMovieData(newState);
     }
+    console.log(movieData)
 
     return (
     <div className='home'>
