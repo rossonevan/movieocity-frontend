@@ -37,7 +37,17 @@ function Movie_card ({movie, addReview, handleDelete, handlePatch}) {
             <button onClick={() => handleRemove(review.id) }>Remove Review</button>
         </div>)})
         
-
+        // const [ratingSum, setRatingSum] = useState(0)
+        let ratingSum = 0
+        
+        const calculateRating = (movie) => {
+            movie.reviews.map ( review => {
+                ratingSum = review.rating + ratingSum
+                let i = 0
+                i = i + 1
+            })
+            return (ratingSum/i).toFixed(2)
+        } 
 
     return (
         <div className='movie-card'>
@@ -45,7 +55,7 @@ function Movie_card ({movie, addReview, handleDelete, handlePatch}) {
                 <h1>{movie.title}</h1>
                 <h2>({movie.release_date})</h2>
                 <img onClick={toggleReviews} src={movie.image} alt={movie.title}/>
-                <h2>Rating: </h2>
+                <h2>Rating: {calculateRating(movie)}/5 </h2>
                 <h3>Genre: {movie.genre}</h3>
                 <div className='review-section'>
                     {showReviews ? reviewList : null}
