@@ -2,7 +2,7 @@ import React from 'react'
 import Movie_card from './Movie_card'
 
 
-function Movie_list ({movieData, addReview, handleDelete}) {
+function Movie_list ({movieData, addReview, handleDelete, handlePatch}) {
     
     const movieComponents = movieData.map(movie => {
         return <Movie_card 
@@ -10,6 +10,7 @@ function Movie_list ({movieData, addReview, handleDelete}) {
         movie = {movie}
         key = {movie.id}
         handleDelete={handleDelete}
+        handlePatch={handlePatch}
         />
     })
     

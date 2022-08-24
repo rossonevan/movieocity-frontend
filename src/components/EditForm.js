@@ -1,42 +1,36 @@
 import { React, useState } from "react";
 
-function Form ({addReview, movie}) {
-
-    const [name, setName] = useState('')
+function EditForm ({handlePatch, review}) {
+    
     const [comment, setComment] = useState('')
     const [rating, setRating] = useState(0)
 
 
-    const handleSubmit = (e) => {
+    const handleEditForm = (e) => {
         e.preventDefault()
-        fetch('http://localhost:9292/reviews',
+        fetch(`http://localhost:9292/reviews/${review.id}`,
         {
-            method: 'POST',
+            method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
                 comment: comment,
-                rating: rating,
-                name: name,
-                id: movie.id
+                rating: rating
             })
         })
         .then((resp) => resp.json())
-        .then(newReview => addReview(newReview))
+        .then(newReview => handlePatch(newReview))
         e.target.reset()
     }
 
-    
-
     return (
-        <form className="review-submit" onSubmit={handleSubmit}>
+        <form className="review-submit" onSubmit={handleEditForm}>
             <input onChange={(e) => setRating(e.target.value)} className="input" name="rating" type="number" min="0" max="5" step="1" placeholder="Insert Rating Here" required />
             <textarea onChange={(e) => setComment(e.target.value)} className="input" name="comment" type='text' placeholder="Write Your Review Here" maxLength='500' required />
-            <input onChange={(e) => setName(e.target.value)} className="input" name="name" type="text" placeholder="Insert Name Here" required />
-            <button type="submit" className="submit-button">Submit Review!</button>
+            <button type="submit" className="submit-button">Edit</button>
         </form>
     )
 }
 
-export default Form;
+export default EditForm;

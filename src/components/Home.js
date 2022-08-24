@@ -21,6 +21,10 @@ function Home () {
         setSearch(string)
     }
 
+    const handlePatch = () => {
+        getMovies()
+    }
+
 
     const handleDelete = () => { 
         getMovies()
@@ -45,7 +49,7 @@ function Home () {
     <div className='home'>
         <Header />
             <Search handleSearch = {handleSearch}/>
-            <Movie_list movieData = {filteredMovies} handleDelete={handleDelete} addReview = {addReview}/>
+            <Movie_list movieData = {filteredMovies} handleDelete={handleDelete} handlePatch = {handlePatch} addReview = {addReview}/>
     </div>
     )
 }

@@ -1,13 +1,21 @@
 import {React, useState} from 'react'
+import EditForm from './EditForm'
 import Form from './Form'
 
 
-function Movie_card ({movie, addReview, handleDelete}) {    
+function Movie_card ({movie, addReview, handleDelete, handlePatch}) {    
     const [isClicked, setIsClicked] = useState(false)
     const [showReviews, setShowReviews] = useState(false)
+    const [editForm, setEditForm] = useState(false)
+    const [comment, setComment] = useState("");
+    const [rating, setRating] = useState("0");
 
     const toggleReviews = () => {
         setShowReviews(showReviews => !showReviews)
+    }
+
+    const toggleEditForm = () => {
+        setEditForm(editForm => !editForm)
     }
 
     const handleClick = () => {
@@ -20,6 +28,7 @@ function Movie_card ({movie, addReview, handleDelete}) {
         })
         .then(() => handleDelete());
     }
+    
 
     let i = 1
     const reviewList = movie.reviews.map( review => {
@@ -28,7 +37,11 @@ function Movie_card ({movie, addReview, handleDelete}) {
             <h2>Review {i++}: {review.user.name} </h2> 
             <p>{review.comment}</p>
             <h3>Rating: {review.rating}/5</h3>
-            <button onClick={() => handleRemove(review.id) }>Remove review</button>
+            <div className='edit-form'>
+                {editForm ? <button onClick={toggleEditForm}>Stop Editing Review</button> : <button onClick={toggleEditForm}>Edit Review</button> }
+                {editForm ? <EditForm handlePatch={handlePatch} review={review} /> : null}
+            </div>
+            <button onClick={() => handleRemove(review.id) }>Remove Review</button>
         </div>)})
         
 
