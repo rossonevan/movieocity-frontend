@@ -34,6 +34,7 @@ function Form ({addReview, movie}) {
             <input onChange={(e) => setRating(e.target.value)} className="input" name="rating" type="number" min="0" max="5" step="1" placeholder="Insert Rating Here" required />
             <textarea onChange={(e) => setComment(e.target.value)} className="input" name="comment" type='text' placeholder="Write Your Review Here" maxLength='500' required />
             <input onChange={(e) => setName(e.target.value)} className="input" name="name" type="text" placeholder="Insert Name Here" required />
+            <br></br>
             <button type="submit" className="submit-button">Submit Review!</button>
         </form>
     )

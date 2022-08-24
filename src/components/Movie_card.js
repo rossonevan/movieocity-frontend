@@ -34,7 +34,7 @@ function Movie_card ({movie, addReview, handleDelete, handlePatch}) {
             <div className='edit-form'>
                 <EditForm handlePatch={handlePatch} review={review} />
             </div>
-            <button onClick={() => handleRemove(review.id) }>Remove Review</button>
+            <button className = "remove-button" onClick={() => handleRemove(review.id) }>Remove Review</button>
         </div>)})
         
         // const [ratingSum, setRatingSum] = useState(0)
@@ -52,14 +52,14 @@ function Movie_card ({movie, addReview, handleDelete, handlePatch}) {
     return (
         <div className='movie-card'>
             <card className="card">
-                <h1>{movie.title}</h1>
-                <h2>({movie.release_date})</h2>
-                <img onClick={toggleReviews} src={movie.image} alt={movie.title}/>
-                <h2>Rating: {calculateRating(movie)}/5 </h2>
-                <h3>Genre: {movie.genre}</h3>
+                <h1 className ="card-title">{movie.title}</h1>
+                <h2 className = "card-release-date">({movie.release_date})</h2>
+                <img className = "card-image" onClick={toggleReviews} src={movie.image} alt={movie.title}/>
+                <h2 className = "card-rating">Rating: {calculateRating(movie)}/5 </h2>
+                <h3 className = "card-genre">Genre: {movie.genre}</h3>
                 <div className='review-section'>
                     {showReviews ? reviewList : null}
-                    {isClicked ? (<button onClick={handleClick} className='create-button'>Cancel Adding Review</button>) : (<button onClick={handleClick} className='create-button'>Add A Review</button>)}
+                    {isClicked ? (<button className = "remove-button" onClick={handleClick} >Cancel Adding Review</button>) : (<button onClick={handleClick} className = "remove-button" >Add A Review</button>)}
                     <br></br>
                     {isClicked ? <Form addReview = {addReview} movie={movie} /> : null}
                 </div> 
