@@ -25,6 +25,7 @@ function Form ({addReview, movie}) {
         })
         .then((resp) => resp.json())
         .then(newReview => addReview(newReview))
+        e.target.reset()
     }
 
     
