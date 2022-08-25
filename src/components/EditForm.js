@@ -33,11 +33,12 @@ function EditForm ({handlePatch, review}) {
             <input onChange={(e) => setRating(e.target.value)} className="input" name="rating" type="number" min="0" max="5" step="1" placeholder="Insert Rating Here" required />
             <textarea onChange={(e) => setComment(e.target.value)} className="input" name="comment" type='text' placeholder="Write Your Review Here" maxLength='500' required />
             <button type="submit" className="submit-edit-button">Edit</button>
+            
         </form>
 
     return (
         <>
-        {editForm ? <button className = "edit-button" onClick={toggleEditForm}>Stop Editing Review</button> : <button className = "edit-button" onClick={toggleEditForm}>Edit Review</button> }
+        {editForm ? <button className = "cancel-edit-button" onClick={toggleEditForm}>Stop Editing Review</button> : <button className = "edit-button" onClick={toggleEditForm}>Edit Review</button> }
         {editForm ? editFormInputs: null}
         </>
     )

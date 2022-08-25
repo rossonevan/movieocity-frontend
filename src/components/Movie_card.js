@@ -59,7 +59,7 @@ function Movie_card ({movie, addReview, handleDelete, handlePatch}) {
                 <h3 className = "card-genre">Genre: {movie.genre}</h3>
                 <div className='review-section'>
                     {showReviews ? reviewList : null}
-                    {isClicked ? (<button className = "remove-button" onClick={handleClick} >Cancel Adding Review</button>) : (<button onClick={handleClick} className = "remove-button" >Add A Review</button>)}
+                    {isClicked ? (<button className = "cancel-adding-button" onClick={handleClick} >Cancel  Adding  Review</button>) : (<button onClick={handleClick} className = "adding-button" >Add A Review</button>)}
                     <br></br>
                     {isClicked ? <Form addReview = {addReview} movie={movie} /> : null}
                 </div> 
