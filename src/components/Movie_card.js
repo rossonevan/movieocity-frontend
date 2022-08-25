@@ -31,13 +31,12 @@ function Movie_card ({movie, addReview, handleDelete, handlePatch}) {
             <h2>Review {i++}: {review.user.name} </h2> 
             <p>{review.comment}</p>
             <h3>Rating: {review.rating}/5</h3>
-            <div className='edit-form'>
+            <>
                 <EditForm handlePatch={handlePatch} review={review} />
-            </div>
+            </>
             <button className = "remove-button" onClick={() => handleRemove(review.id) }>Remove Review</button>
         </div>)})
         
-        // const [ratingSum, setRatingSum] = useState(0)
         let ratingSum = 0
         
         const calculateRating = (movie) => {

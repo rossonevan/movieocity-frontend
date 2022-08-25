@@ -38,7 +38,7 @@ function EditForm ({handlePatch, review}) {
 
     return (
         <>
-        {editForm ? <button className = "cancel-edit-button" onClick={toggleEditForm}>Stop Editing Review</button> : <button className = "edit-button" onClick={toggleEditForm}>Edit Review</button> }
+        {editForm ? <button className = "cancel-edit-button" onClick={toggleEditForm}>Cancel Editing Review</button> : <button className = "edit-button" onClick={toggleEditForm}>Edit Review</button> }
         {editForm ? editFormInputs: null}
         </>
     )

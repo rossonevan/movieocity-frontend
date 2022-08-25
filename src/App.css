@@ -6,12 +6,7 @@ body, html {
   background-position: center;
   font-family: 'Source Sans Pro', sans-serif;
   color: white;
-  
-
 }
-
-
-
 
 .header {
   font-size: 80px;
@@ -20,26 +15,13 @@ body, html {
   margin: 30px 0 30px 0;
   background-image: linear-gradient(90deg, rgba(255,0,0,1) 33%, rgba(166,166,164,1) 51%, rgba(180,0,0,1) 61%);
   -webkit-background-clip: text;
-    background-clip: text;
-    transition: 200ms transform ease-in-out;
-    
-
+  background-clip: text;
+  transition: 200ms transform ease-in-out;
 }
 
 .header:hover{
   transform: scale(1.025);
 }
-
-/* .header-image {
-  max-height: 100px;
-  max-width: 100px;
-  position:absolute;
-  transform: translate(-50, -50%);
-  background-color: transparent
-
-} */
-
-
 
 .movie-list {
   text-align: center;
@@ -50,216 +32,186 @@ body, html {
 }
 
 .card-image {
-max-width: 300px;
-max-height: 500px;  
-transition: transform 200ms ease-in-out;
-
-
+  width: 300px;
+  height: 450px;  
+  transition: transform 200ms ease-in-out;
 }
 
 .card-image:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
-
-
 }
 
 .movie-card {
-    padding: 1rem;
-    /* background-image: linear-gradient(to bottom, #000000, #0f0f0f, #191919, #212121, #2a2a2a); */
-    background-image: linear-gradient(to bottom, #000000, #0a0a0a, #121212, #181818, #1d1d1d);
-    
-    border: 1px solid black;
-    border-radius: .25rem;
-    overflow: hidden;
+  padding: 1rem;
+  background-image: linear-gradient(to bottom, #000000, #0a0a0a, #121212, #181818, #1d1d1d);
+  border: 1px solid black;
+  border-radius: .25rem;
+  overflow: hidden;
 }
 
 .input {
-
-
-    padding: 3px;
-     font-size: 16px;
-     border-width: 2px;
-     border-color: #6e6e6e;
-     background-color: #ececec;
-     color: #000000;
-     border-style: solid;
-     border-radius: 12px;
-     box-shadow: 0px 0px 3px rgba(0,0,0,.76);
-     display: flex;
-     width: 200px;
-     margin-top: 15px;
-     margin-bottom: 15px;
-
-  
-  
-  
-  
-
+  padding: 3px;
+  font-size: 16px;
+  border-width: 2px;
+  border-color: #6e6e6e;
+  background-color: #ececec;
+  color: #000000;
+  border-style: solid;
+  border-radius: 12px;
+  box-shadow: 0px 0px 3px rgba(0,0,0,.76);
+  display: flex;
+  width: 200px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
-
 
 .edit-button {
   background-image: linear-gradient(to right, #000000 0%, #e74c3c  51%, #000000  100%);
-   margin: 10px;
-   padding: 15px 45px;
-   text-align: center;
-   text-transform: uppercase;
-   transition: 0.5s;
-   background-size: 200% auto;
-   color: white;            
-   box-shadow: 0 0 20px black;
-   border-radius: 10px;
-  /* padding: 15px 32px;
+  margin: 15px;
+  padding: 15px 45px;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer; */
-  
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px black;
+  border-radius: 10px;
+  cursor: pointer;
 }
+
+.edit-button:hover{
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
 .remove-button {
-   background-image: linear-gradient(to right, #000000 0%, #e74c3c  51%, #000000  100%);
-   margin: 10px;
-   padding: 15px 45px;
-   text-align: center;
-   text-transform: uppercase;
-   transition: 0.5s;
-   background-size: 200% auto;
-   color: white;            
-   box-shadow: 0 0 20px black;
-   border-radius: 10px;
-   top: 400px;
-   
- }
-
-
- .remove-button:hover {
-   background-position: right center; /* change the direction of the change here */
-   color: #fff;
-   text-decoration: none;
- }
-
- .adding-button{
   background-image: linear-gradient(to right, #000000 0%, #e74c3c  51%, #000000  100%);
-   margin: 10px;
-   padding: 15px 45px;
-   text-align: center;
-   text-transform: uppercase;
-   transition: 0.5s;
-   background-size: 200% auto;
-   color: white;            
-   box-shadow: 0 0 20px black;
-   border-radius: 10px;
+  margin: 15px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px black;
+  border-radius: 10px;
+  cursor: pointer;
+}
 
- }
+.remove-button:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.adding-button{
+  background-image: linear-gradient(to right, #000000 0%, #e74c3c  51%, #000000  100%);
+  margin: 40px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px black;
+  border-radius: 10px;
+  cursor: pointer;
+}
 
  .adding-button:hover {
   background-position: right center; /* change the direction of the change here */
-   color: #fff;
-   text-decoration: none;
+  color: #fff;
+  text-decoration: none;
+}
 
- }
-.submit-button{
-           
-    background-image: linear-gradient(to right, #000000 0%, #e74c3c  51%, #000000  100%);
-    margin: 10px;
-    padding: 15px 45px;
-    text-align: center;
-    text-transform: uppercase;
-    transition: 0.5s;
-    background-size: 200% auto;
-    color: white;            
-    box-shadow: 0 0 20px black;
-    border-radius: 10px;
-    
-  }
+.submit-button{  
+  background-image: linear-gradient(to right, #000000 0%, #e74c3c  51%, #000000  100%);
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px black;
+  border-radius: 10px;
+  cursor: pointer;
+}
 
-  .submit-button:hover {
-    background-position: right center; /* change the direction of the change here */
-    color: #fff;
-    text-decoration: none;
-  }
+.submit-button:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
 
-  .edit-button {
-    background-image: linear-gradient(to right, #000000 0%, #e74c3c  51%, #000000  100%);
-    margin: 10px;
-    padding: 15px 45px;
-    text-align: center;
-    text-transform: uppercase;
-    transition: 0.5s;
-    background-size: 200% auto;
-    color: white;            
-    box-shadow: 0 0 20px black;
-    border-radius: 10px;
-    display: block;
+.cancel-edit-button{
+  background-image: white;
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: red;          
+  box-shadow: 0 0 20px black;
+  border-radius: 10px;
+  cursor: pointer;
+}
 
+.cancel-edit-button:hover {
+  background-position: right center; /* change the direction of the change here */
+  background-color: #e74c3c;
+  color:white;
+  text-decoration: none;
+}
 
-  }
-  .cancel-edit-button{
-    background-image: white;
-    margin: 10px;
-    padding: 15px 45px;
-    text-align: center;
-    text-transform: uppercase;
-    transition: 0.5s;
-    background-size: 200% auto;
-    color: red;          
-    box-shadow: 0 0 20px black;
-    border-radius: 10px;
-    
+.submit-edit-button{
+  background-image: linear-gradient(to right, #000000 0%, #e74c3c  51%, #000000  100%);
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px black;
+  border-radius: 10px;
+  cursor: pointer;
+}
 
+.cancel-adding-button{
+  background-image: white;
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: red;          
+  box-shadow: 0 0 20px black;
+  border-radius: 10px;
+  margin-top: 50px;
+  cursor: pointer;
+}
 
-  }
+.cancel-adding-button:hover {
+  background-position: right center; /* change the direction of the change here */
+  background-color: #e74c3c;
+  color:white;
+  text-decoration: none;
+}
 
-  .submit-edit-button{
-    background-image: linear-gradient(to right, #000000 0%, #e74c3c  51%, #000000  100%);
-    margin: 10px;
-    padding: 15px 45px;
-    text-align: center;
-    text-transform: uppercase;
-    transition: 0.5s;
-    background-size: 200% auto;
-    color: white;            
-    box-shadow: 0 0 20px black;
-    border-radius: 10px;
-    
-
-  }
-
-  .cancel-adding-button{
-    background-image: white;
-    margin: 10px;
-    padding: 15px 45px;
-    text-align: center;
-    text-transform: uppercase;
-    transition: 0.5s;
-    background-size: 200% auto;
-    color: red;          
-    box-shadow: 0 0 20px black;
-    border-radius: 10px;
-    margin-top: 50px;
-    
-
-  }
-
-  .submit-edit-button:hover{
-    background-position: right center; /* change the direction of the change here */
-    color: #fff;
-    text-decoration: none;
-
-  }
-
-  .edit-button:hover{
-    background-position: right center; /* change the direction of the change here */
-    color: #fff;
-    text-decoration: none;
-  }
+.submit-edit-button:hover{
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
  
-  button {
-    display: inline-block;
-  }
+button {
+  display: inline-block;
+}
  
 .input:focus {
   background-color: lightblue;
@@ -267,8 +219,6 @@ transition: transform 200ms ease-in-out;
 
 form {
   padding: 2rem;
-  
-  
 } 
 .review-section {
   font-family: 'Source Sans Pro', sans-serif;
@@ -295,13 +245,11 @@ textarea::placeholder {
   background-color: #f3f3f4;
   color: #0d0c22;
   transition: .3s ease;
-  
 }
 
 .search-bar::placeholder {
   font-family: Arial, Helvetica, sans-serif;
   color: #9e9ea7;
-   
 }
 
 .search-bar:focus, .search-bar:hover {
