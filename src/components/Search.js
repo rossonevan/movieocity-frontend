@@ -17,13 +17,13 @@ function Search ({handleSearch, handleFilterGenre}) {
                 <input className='search-bar'
                 onChange = {onSearch}
                 type = 'text'
-                placeholder='Search by title...'
+                placeholder='Search by Title...'
                 />
             </form>
             <br></br>
             <label className='genre-drop-down-label'>Search Genre: </label>
             <select name="genre-drop-down" className='genre-drop-down' onChange={onFilter}>
-                <option value='default'>Show all</option>
+                <option value='default'>All</option>
                 <option value="fantasy">Fantasy</option>
                 <option value="horror">Horror</option>
                 <option value="thriller">Thriller</option>
@@ -33,6 +33,7 @@ function Search ({handleSearch, handleFilterGenre}) {
                 <option value="action">Action</option>
                 <option value="war">War</option>
             </select>
+            <div className = "select-arrow"></div>
         </div>
     )
 }
