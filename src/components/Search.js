@@ -4,7 +4,6 @@ import React from 'react'
 function Search ({handleSearch, handleFilterGenre}) {
     
     const onFilter = (e) => {
-        console.log(e.target.value)
         handleFilterGenre(e.target.value)
     }
 
