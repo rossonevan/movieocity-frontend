@@ -1,9 +1,10 @@
 body, html {
   text-align: center;
-  background-image: url('https://media.istockphoto.com/vectors/abstract-shiny-background-with-blank-film-strips-and-copy-space-vector-id1058727850?k=20&m=1058727850&s=612x612&w=0&h=W7Gcv5mFs9IninwTufJRkj8m77af7tmod672UpuXu3g=');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-image: linear-gradient(to bottom, #000000, #40121e, #7e102d, #bf0233, #ff002d);
   background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  font-family: 'Source Sans Pro', sans-serif;
   
 
 }
@@ -12,18 +13,30 @@ body, html {
 
 
 .header {
-  font-size: 50px;
+  font-size: 80px;
   font-family: 'Source Sans Pro', sans-serif;
-  color: #000000;
+  color: transparent;
   margin: 30px 0 30px 0;
+  background-image: linear-gradient(90deg, rgba(255,0,0,1) 33%, rgba(166,166,164,1) 51%, rgba(180,0,0,1) 61%);
+  -webkit-background-clip: text;
+    background-clip: text;
+    transition: 200ms transform ease-in-out;
+    
 
 }
 
-.header-image {
+.header:hover{
+  transform: scale(1.025);
+}
+
+/* .header-image {
   max-height: 100px;
   max-width: 100px;
-  
-}
+  position:absolute;
+  transform: translate(-50, -50%);
+  background-color: transparent
+
+} */
 
 
 
@@ -52,29 +65,35 @@ transition: transform 200ms ease-in-out;
 
 .movie-card {
     padding: 1rem;
-    background: rgba(209, 208, 208, 0.822);
+    background: linear-gradient(to right, #868f96 0%, #596164 100%);
     border: 1px solid black;
     border-radius: .25rem;
     overflow: hidden;
 }
 
 .input {
-  border: 2px solid black;
-  border-radius: 4px;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  margin-right: 10px;
-  display: flex; 
-  flex-wrap: wrap;
-  justify-content: space-between;
-  text-align: center;
-  width: 200px;
+
+
+    padding: 3px;
+     font-size: 16px;
+     border-width: 2px;
+     border-color: #6e6e6e;
+     background-color: #ececec;
+     color: #000000;
+     border-style: solid;
+     border-radius: 12px;
+     box-shadow: 0px 0px 3px rgba(0,0,0,.76);
+     display: flex;
+     width: 200px;
+
   
   
   
   
 
 }
+
+
 .edit-button {
   padding: 15px 32px;
   text-align: center;
@@ -86,15 +105,77 @@ transition: transform 200ms ease-in-out;
   
 }
 .remove-button {
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
+   background-image: linear-gradient(to right, #000000 0%, #e74c3c  51%, #000000  100%);
+   margin: 10px;
+   padding: 15px 45px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;            
+   box-shadow: 0 0 20px black;
+   border-radius: 10px;
+   display: block;
+ }
 
-}
+ .remove-button:hover {
+   background-position: right center; /* change the direction of the change here */
+   color: #fff;
+   text-decoration: none;
+ }
+
+
+.submit-button{
+           
+    background-image: linear-gradient(to right, #000000 0%, #e74c3c  51%, #000000  100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px black;
+    border-radius: 10px;
+    display: block;
+  }
+
+  .submit-button:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .edit-button {
+    background-image: linear-gradient(to right, #000000 0%, #e74c3c  51%, #000000  100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px black;
+    border-radius: 10px;
+    display: block;
+
+
+  }
+
+  .edit-button:hover{
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+
+  }
+ 
+
+
+
+
+
+
+
 
 .input:focus {
   background-color: lightblue;
@@ -105,7 +186,41 @@ form {
   
   
 } 
+.review-section {
+  font-family: 'Source Sans Pro', sans-serif;
+}
 
+textarea::placeholder {
+  font-family: Arial;
+}
+
+.search-bar {
+  width: 250px;
+  height: 40px;
+  line-height: 28px;
+  padding: 0 1rem;
+  padding-left: 2.5rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  background-color: #f3f3f4;
+  color: #0d0c22;
+  transition: .3s ease;
+  
+}
+
+.search-bar::placeholder {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #9e9ea7;
+   
+}
+
+.search-bar:focus, .search-bar:hover {
+  outline: none;
+  border-color: red;
+  background-color: #fff;
+  box-shadow: rgb(139, 39, 39)
+}
 
 
 
