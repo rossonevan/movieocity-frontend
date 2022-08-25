@@ -284,12 +284,12 @@ textarea::placeholder {
 }
 
 .search-bar {
-  width: 250px;
+  width: 700px;
   height: 40px;
   line-height: 28px;
   padding: 0 1rem;
   padding-left: 2.5rem;
-  border: 2px solid transparent;
+  border: 3px solid transparent;
   border-radius: 8px;
   outline: none;
   background-color: #f3f3f4;
@@ -306,7 +306,7 @@ textarea::placeholder {
 
 .search-bar:focus, .search-bar:hover {
   outline: none;
-  border-color: red;
+  border-color: black;
   background-color: #fff;
   box-shadow: rgb(139, 39, 39)
 }
