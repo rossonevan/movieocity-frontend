@@ -18,6 +18,7 @@ The main section of our webpage contains the movie cards, where a user is shown 
 * Rating
 * Review Comment
 * Name
+
 Clicking the `Submit Review!` button will add that review to the card. If the user changes their mind about creating a review, they can click the `Cancel Adding Review` button and the inputs will disappear. The button changes back to `Add A Review`.
 
 If a user wants to see the reviews related to a movie, by hovering over the image, the cursor will change to a pointer to let them know that the image is clickable. Once clicked, the reviews will be displayed underneath the image inside the movie card. The user will also have the ability to edit their review once submitted by clicking the `Edit Review` button. Once clicked, two inputs appear allowing the user to edit: 
